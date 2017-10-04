@@ -3,8 +3,19 @@
 
 // When size is submitted by the user, call makeGrid()
 
-function makeGrid() {
+makeGrid = () => {
 
-// Your code goes here!
+
 
 }
+
+let heightGrid = $('#input_height');
+let widthGrid =  $('#input_width');
+
+heightGrid.on('keypress', function(e){
+console.log(`value changed to ${e}`);
+});
+
+widthGrid.on('keypress', function(e){
+console.log(`value changed to ${e}`);
+});

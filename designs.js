@@ -5,7 +5,7 @@
 
 makeGrid = () => {
 
-
+console.log("Success");
 
 }
 
@@ -13,7 +13,7 @@ makeGrid = () => {
 
 const heightGrid = $('#input_height');
 const widthGrid = $('#input_width');
-
+const colorPicked = $('#colorPicker');
 
 
 // To grab the values
@@ -21,14 +21,20 @@ const widthGrid = $('#input_width');
 let heightValue = heightGrid.val();
 let widthValue =  widthGrid.val();
 
-let colorPicked = $('#colorPicker').val();
+let colorValue = colorPicked.val();
 
 
-
-heightGrid.keypress(function(){
-console.log(`The value selected for height is ${heightValue}`);
+$('#sizePicker').on("submit", function(event){
+  console.log(`height: ${heightValue} and width: ${widthValue}`);
+  makeGrid();
+  event.preventDefault(); // stops page from refreshing upon submit
 });
 
-widthGrid.keypress(function(){
-console.log(`The value selected for width is ${widthValue}`);
-});
+
+// heightGrid.keypress(function(){
+// console.log(`The value selected for height is ${heightValue}`);
+// });
+
+// widthGrid.keypress(function(){
+// console.log(`The value selected for width is ${widthValue}`);
+// });

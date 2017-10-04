@@ -4,37 +4,45 @@
 // When size is submitted by the user, call makeGrid()
 
 makeGrid = () => {
+  const pixelCanvas = $('#pixel_canvas');
+  const heightValue = $('#input_height').val();
+  const widthValue = $('#input_width').val();
+  pixelCanvas.innerText = ""; //empty table
 
-console.log("Success");
 
+  for (let h = 0; h < heightValue; ++h) {
+    const row = pixelCanvas.insertRow(-1);
+  for (let w = 0; w < widthValue; ++w) {
+      const cell = row.insertCell(-1);
+      cell.onclick = changeColor;
+    }
+  }
+  event.preventDefault(); // stops page from refreshing upon submit
 }
 
-// assigning variables for input fields
 
-const heightGrid = $('#input_height');
-const widthGrid = $('#input_width');
-const colorPicked = $('#colorPicker');
-
-
-// To grab the values
-
-let heightValue = heightGrid.val();
-let widthValue =  widthGrid.val();
-
-let colorValue = colorPicked.val();
+changeColor = () => {
+  const color = $('#colorPicker').val();
+  this.style.background = color;
+}
 
 
-$('#sizePicker').on("submit", function(event){
-  console.log(`height: ${heightValue} and width: ${widthValue}`);
-  makeGrid();
-  event.preventDefault(); // stops page from refreshing upon submit
-});
 
 
-// heightGrid.keypress(function(){
-// console.log(`The value selected for height is ${heightValue}`);
+
+
+
+
+
+
+
+
+
+
+
+// $('#sizePicker').on("submit", function(event){
+//   console.log(`height: ${heightValue} and width: ${widthValue}`);
+//   makeGrid();
+//   event.preventDefault(); // stops page from refreshing upon submit
 // });
 
-// widthGrid.keypress(function(){
-// console.log(`The value selected for width is ${widthValue}`);
-// });

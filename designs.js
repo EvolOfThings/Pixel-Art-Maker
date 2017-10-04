@@ -9,13 +9,26 @@ makeGrid = () => {
 
 }
 
-let heightGrid = $('#input_height');
-let widthGrid =  $('#input_width');
+// assigning variables for input fields
 
-heightGrid.on('keypress', function(e){
-console.log(`value changed to ${e}`);
+const heightGrid = $('#input_height');
+const widthGrid = $('#input_width');
+
+
+
+// To grab the values
+
+let heightValue = heightGrid.val();
+let widthValue =  widthGrid.val();
+
+let colorPicked = $('#colorPicker').val();
+
+
+
+heightGrid.keypress(function(){
+console.log(`The value selected for height is ${heightValue}`);
 });
 
-widthGrid.on('keypress', function(e){
-console.log(`value changed to ${e}`);
+widthGrid.keypress(function(){
+console.log(`The value selected for width is ${widthValue}`);
 });
